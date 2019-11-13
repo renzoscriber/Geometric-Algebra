@@ -1,0 +1,136 @@
+\documentclass[a4paper]{article}
+% Preamble
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[english]{babel}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{standalone}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{natbib}
+\usepackage{amsfonts}
+
+\title{Geometric Algebra}
+\author{Lauren Shriver}
+\date{Fall 2019}
+
+\begin{document}
+\maketitle
+
+\section*{The Geometric Product in $G_3$}
+Preliminary identities: $\mathbf{ab}$ for vectors $\mathbf{a}$, $\mathbf{b}$, and $\mathbf{c}$:
+    \begin{equation}
+        (\mathbf{ab})\mathbf{c} = \mathbf{a}(\mathbf{bc}), \quad \mathrm{Associative}
+    \end{equation}
+    \begin{equation}
+        \mathbf{a}(\mathbf{b}+\mathbf{c}) = \mathbf{ab}+\mathbf{ac}, \quad \mathrm{Left \, \, Distributive}
+    \end{equation}
+    \begin{equation}
+        (\mathbf{b}+\mathbf{c})\mathbf{a} = \mathbf{ba}+\mathbf{ca}, \quad \mathrm{Right \, \, Distributive}
+    \end{equation}
+    \begin{equation}
+        \mathbf{a}^2 = |\mathbf{a}|^2, \quad \mathrm{Contraction}
+    \end{equation}
+\subsection*{The vector-vector geometric product}
+    \begin{equation}
+        \mathbf{u}\mathbf{v} = \mathbf{u}\cdot\mathbf{v} + \mathbf{u} \wedge \mathbf{v}
+    \end{equation}
+    \begin{equation}
+        \mathbf{u} \cdot \mathbf{v} = \frac{1}{2} (\mathbf{u}\mathbf{v} + \mathbf{v}\mathbf{u}) = \langle \mathbf{u}\mathbf{v} \rangle_0
+    \end{equation}
+        \begin{equation}
+        \mathbf{u} \wedge \mathbf{v} = \frac{1}{2} (\mathbf{u}\mathbf{v} - \mathbf{v}\mathbf{u}) = \langle \mathbf{u}\mathbf{v} \rangle_2
+    \end{equation}
+\subsection*{The vector-bivector geometric product}
+        \begin{equation}
+        \mathbf{a}\mathbf{B} = \mathbf{a}\cdot\mathbf{B} + \mathbf{a} \wedge \mathbf{B}
+    \end{equation}
+    \begin{equation}
+        \mathbf{a} \cdot \mathbf{B} = \frac{1}{2} (\mathbf{a}\mathbf{B} - \mathbf{B}\mathbf{a}) = \langle \mathbf{a}\mathbf{B} \rangle_1
+    \end{equation}
+        \begin{equation}
+        \mathbf{a} \wedge \mathbf{B} = \frac{1}{2} (\mathbf{a}\mathbf{B} + \mathbf{B}\mathbf{a}) = \langle \mathbf{a}\mathbf{B} \rangle_3
+    \end{equation}
+\section*{Dual and the Cross Product}
+General expressions relating a bivector $\mathbf{B} = \mathbf{u} \wedge \mathbf{v}$ to its corresponding dual vector:
+    \begin{equation}
+        \mathbf{u} \times \mathbf{v} = (\mathbf{u} \wedge \mathbf{v})I^{-1} = \mathbf{B}I^{-1}
+    \end{equation}
+    \begin{equation}
+        \mathbf{B} = \mathbf{u} \wedge \mathbf{v} = (\mathbf{u} \times \mathbf{v})I
+    \end{equation}
+\subsection*{Scalar-triple product}
+For $\mathbf{u} \wedge \mathbf{v} \wedge \mathbf{w} = \lambda I$, we get
+    \begin{equation}
+        \lambda = \mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})
+    \end{equation}
+\subsection*{Vector-triple product}
+    \begin{equation}
+        \mathbf{u} \times (\mathbf{v} \times \mathbf{w}) = \mathbf{u} \cdot (\mathbf{w} \wedge \mathbf{v})
+    \end{equation}
+\section*{Linear Transformations and Outermorphsisms}
+\subsection*{Background}
+Two requirements for a multi-variable function $f$ to be considered a linear transformation:
+    \begin{enumerate}
+        \item $f(\vec{x} + \vec{y}) = f(\vec{x}) + f(\vec{y})$
+        \item $f(\lambda\vec{x}) = \lambda f(\vec{x})$
+    \end{enumerate}
+We can unify these two requirements into a single equation:
+    \begin{equation}
+        f(\alpha \vec{x} + \beta \vec{y}) = \alpha f(\vec{x}) + \beta f(\vec{y})
+    \end{equation}
+\subsubsection*{Combining Linear Transformations}
+If $f$ is a linear transformation, then a scalar multiple of $f$ is also a linear transformation:
+    \begin{equation}
+        (\lambda f)(\vec{x}) = \lambda f(\vec{x})
+    \end{equation}
+The sum of two linear transformations is also a linear transformation:
+    \begin{equation}
+        (f+g)(\vec{x}) = f(\vec{x}) + g(\vec{x})
+    \end{equation}
+The composition of two linear transformations is also a linear transformation:
+    \begin{equation}
+        (fg)(\vec{x}) = f(g(\vec{x}))
+    \end{equation}
+Linear transformations are associative:
+    \begin{equation}
+        f(gh) = (fg)h
+    \end{equation}
+Generally, linear transformations are NOT necessarily commutative:
+    \begin{equation}
+        fg \neq gf
+    \end{equation}
+Linear transformations are distributive:
+    \begin{equation}
+        f(g+h) = fg + fh
+    \end{equation}
+\subsection*{Outermorphisms: Extending Linear Algebra}
+Note: Outermorphisms preserve the structure of the outer (i.e., wedge) product 
+\subsubsection*{LTs of Bivectors}
+A linear transformation/outermorphism of a bivector (i.e., an oriented patch of area) returns another bivector
+\\
+\\
+General rule:
+    \begin{equation}
+        f(\vec{u}\wedge \vec{v}) = f(\vec{u}) \wedge f(\vec{v})
+    \end{equation}
+General rule for a linear transformation acting on a sum of blades:
+    \begin{equation}
+        f(\vec{a} \wedge \vec{b} + \vec{c} \wedge \vec{d}) = f(\vec{a} \wedge \vec{b}) + f(\vec{c} \wedge \vec{d})
+    \end{equation}
+\subsubsection*{LTs of Trivectors}
+A linear transformation/outermorphism of a trivector (i.e., an oriented patch of volume) returns another trivector
+\\
+\\
+General rules:
+    \begin{equation}
+        f(\vec{u} \wedge \vec{v} \wedge \vec{w}) = f(\vec{u}) \wedge f(\vec{v}) \wedge f(\vec{w})
+    \end{equation}
+    \begin{equation}
+        f(\lambda(\vec{u} \wedge \vec{v} \wedge \vec{w})) = \lambda(f(\vec{u}) \wedge f(\vec{v}) \wedge f(\vec{w}))
+    \end{equation}
+\end{document}

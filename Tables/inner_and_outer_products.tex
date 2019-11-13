@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[table]{xcolor}
+%\usepackage[showframe=true]{geometry}
+\usepackage{changepage}
+\usepackage{fullpage} % Package to use full page
+\usepackage{parskip} % Package to tweak paragraph skipping
+\usepackage{tikz} % Package for drawing
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{color}
+\usepackage[version=4]{mhchem} 
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage{subfig}
+
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+\setlength{\arrayrulewidth}{1mm}
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.75}
+
+\begin{document}
+	{\rowcolors{2}{gray!20}{white}	
+	\begin{table}[!h]
+		\begin{tabular}{||c|c|c||}
+			\hline
+			\rowcolor{orange!85!black} \textcolor{white}{\head{Identity}} & \textcolor{white}{\head{Equation}} & \textcolor{white}{\head{Property}} \\
+			\hline
+			Inner product & $\mathbf{a} \cdot \mathbf{b} =\frac{1}{2}(\mathbf{ab}+\mathbf{ba})=\mathbf{b}\cdot \mathbf{a}$ & Symmetric\\
+            Wedge product & $\mathbf{a} \wedge \mathbf{b} =\frac{1}{2}(\mathbf{ab}-\mathbf{ba})=\mathbf{b}\cdot \mathbf{a}$ & Anti-symmetric\\
+            Geometric product & $\mathbf{ab} = \mathbf{a} \cdot \mathbf{b} + \mathbf{a} \wedge \mathbf{b} $ & \begin{tabular}{c}
+                 Canonical decomposition of \\
+                 inner and outer products
+            \end{tabular} \\
+			\hline
+		\end{tabular}
+	\end{table}}
+\end{document}

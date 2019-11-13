@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[table]{xcolor}
+%\usepackage[showframe=true]{geometry}
+\usepackage{changepage}
+\usepackage{fullpage} % Package to use full page
+\usepackage{parskip} % Package to tweak paragraph skipping
+\usepackage{tikz} % Package for drawing
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{color}
+\usepackage[version=4]{mhchem} 
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage{subfig}
+
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+\setlength{\arrayrulewidth}{1mm}
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.75}
+
+\begin{document}
+	{\rowcolors{2}{gray!20}{white}	
+	\begin{table}[!h]
+		\begin{tabular}{||c|c||}
+			\hline
+			\rowcolor{green!50!blue} \textcolor{white}{\head{Rule/Property}} & \textcolor{white}{\head{Equation}}\\ 
+			\hline
+			Associative & $(\mathbf{ab})\mathbf{c} = \mathbf{a}(\mathbf{bc})$ \\
+			Left Distributive & $\mathbf{a}(\mathbf{b}+\mathbf{c}) = \mathbf{ab}+\mathbf{ac}$ \\
+			Right Distributive & $(\mathbf{b}+\mathbf{c})\mathbf{a} = \mathbf{ba}+\mathbf{ca}$ \\
+			Contraction & $\mathbf{a}^2 = |\mathbf{a}|^2$ \\
+			\hline
+		\end{tabular}
+	\end{table}}
+\end{document}
